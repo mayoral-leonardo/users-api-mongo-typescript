@@ -6,7 +6,7 @@ import {
   UpdateUserParams,
 } from "./protocols";
 
-export class UpdatedUserController implements IUpdateUserController {
+export class UpdateUserController implements IUpdateUserController {
   constructor(private readonly updateUserRepository: IUpdateUserRepository) {}
   async handle(httpRequest: HttpRequest<unknown>): Promise<HttpResponse<User>> {
     try {

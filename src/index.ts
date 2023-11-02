@@ -6,7 +6,7 @@ import { MongoClient } from "./database/mongo";
 import { MongoCreateUserRepository } from "./repositories/createUser/mongoCreateUser";
 import { CreateUserController } from "./controllers/createUser/createUser";
 import { MongoUpdateUserRepository } from "./repositories/updateUser/mongoUpdateUser";
-import { UpdatedUserController } from "./controllers/updateUser/updateUser";
+import { UpdateUserController } from "./controllers/updateUser/updateUser";
 import { MongoDeleteUserRepository } from "./repositories/deleteUser/mongoDeleteUser";
 import { DeleteUserController } from "./controllers/deleteUser/deleteUser";
 
@@ -46,7 +46,7 @@ const main = async () => {
   app.patch("/users/:id", async (req, res) => {
     const mongoUpdateUserRepository = new MongoUpdateUserRepository();
 
-    const updateUserController = new UpdatedUserController(
+    const updateUserController = new UpdateUserController(
       mongoUpdateUserRepository
     );
 
